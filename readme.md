@@ -1,0 +1,122 @@
+## Functions
+
+-   Hardware
+    -   BIOS
+        -   Version
+        -   Manufacture
+        -   Serial Number
+        -   Release Date
+    -   Hardrive
+        -   Model
+        -   Serial Number
+        -   Firmware Version
+        -   Partitions
+        -   Size (GB)
+        -   Interface Type
+        -   Media Type
+    -   Processor
+        -   Address Width
+        -   L2 Cache Size (MB)
+        -   L3 Cache Size (MB)
+        -   Name
+        -   Base Clock (GHz)
+        -   Voltage (V)
+        -   Stepping
+    -   RAM
+        -   Bank
+        -   Capacity (GB)
+        -   Speed (MHz)
+        -   Voltage (V)
+        -   Data Width
+        -   Locator
+        -   Vendor
+        -   Part Number
+        -   Serial Number
+-   Network Adapter
+    -   Type
+    -   Avaliability
+    -   Interface
+    -   Name
+    -   MAC
+    -   Error
+    -   Manufacture
+    -   Connection Name
+    -   Connection Status
+    -   Network Enabled
+    -   Connection Info
+        -   Gateway
+        -   IP
+        -   DHCP Status
+        -   DHCP Server
+        -   Hostname
+        -   DNS Servers
+        -   Subnet
+-   Security
+    -   Bitlocker
+        -   Drive Letter
+        -   Conversion Status
+        -   Encryption Method
+        -   Protection Status
+        -   Volume Type
+    -   TPM
+        -   Activation Status
+        -   Enabled / Disabled
+        -   Owned
+        -   Manufacture
+        -   Version
+        -   Highest Spec
+    -   UAC
+        -   Enabled / Disabled
+-   Software
+    -   Browser
+        -   Firefox
+            -   Version
+    -   Software List
+        -   Name
+        -   Publisher
+        -   Version
+        -   Uninstall Command
+        -   Quiet Uninstall Command
+        -   Install Date
+        -   Information URL
+        -   Installed Location
+-   System
+    -   System
+        -   Part of Domain ?
+        -   Domain Name
+        -   Domain Role
+        -   Hostname
+        -   Manufacture
+        -   Model
+        -   Device Family
+        -   Time Zone
+        -   Hypervisor
+        -   Logical Core Count
+        -   Processor Count
+        -   Device Type
+        -   Power State
+        -   Username
+        -   Wakeup Type
+    -   OS
+        -   Build Number
+        -   System Drive
+        -   Last Boot
+        -   Install Time
+        -   Name
+        -   Country Code
+        -   Serial Number
+        -   Version
+-   User
+    -   User Accounts
+        -   Name
+        -   Type
+        -   Caption
+        -   Description
+        -   Enabled / Disabled
+        -   Domain
+        -   Full Name
+        -   Local ?
+        -   SID
+        -   Status
+    -   Local Admins
+        -   User Name
