@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Management;
 using System.Management.Automation;
-using DeviceInfo.tools;
 
 namespace DeviceInfo.Network {
     [Cmdlet(VerbsCommon.Get, "NetAdapterInfo")]
@@ -169,7 +168,6 @@ namespace DeviceInfo.Network {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter");
             List<Adapter> data = new List<Adapter>();
             Dictionary<byte, NetInfo> conn_info = netinfo();
-            Tools tools = new Tools();
 
             foreach (ManagementBaseObject cim_data in searcher.Get()) {
                 if (not_physical(Convert.ToString(cim_data["PNPDeviceID"]))) { continue; }

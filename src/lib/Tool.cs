@@ -2,12 +2,11 @@ using System;
 using System.Globalization;
 using System.Linq;
 
-namespace DeviceInfo.tools {
+namespace DeviceInfo.Tools {
 
-    internal class Tools {
-
-        public double highest_num(string data) {
-            // Return highest value as Double in string like ['1,0', '1.1']
+    internal class Tool {
+        public double HighestNum(string data) {
+            // Return highest value as Double in string like ['1.0', '1.1']
             string[] strlist = data.Split(',');
             double[] floatlist = new double[strlist.Length];
             for (int i = 0; i < strlist.Length; i++) {
@@ -16,8 +15,9 @@ namespace DeviceInfo.tools {
             return floatlist.Max();
         }
 
-        public DateTime str_date(string data) {
+        public DateTime StrToDate(string data) {
             // Convert time from WMI i.e. 20230401092040.000000+480 to Datetime
+            if (data == null || data.Length == 0) return DateTime.MinValue;
             data = data.Split('.')[0];
             return DateTime.ParseExact(data, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
         }

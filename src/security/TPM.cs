@@ -1,8 +1,8 @@
+using DeviceInfo.Tools;
 using System;
 using System.Collections.Generic;
 using System.Management;
 using System.Management.Automation;
-using DeviceInfo.tools;
 
 namespace DeviceInfo.Security {
     [Cmdlet(VerbsCommon.Get, "TpmInfo")]
@@ -19,7 +19,7 @@ namespace DeviceInfo.Security {
         protected override void EndProcessing() {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root/CIMv2/Security/MicrosoftTpm", "SELECT * FROM Win32_Tpm");
             List<Tpm> data = new List<Tpm>();
-            Tools tools = new Tools();
+            Tool tools = new Tool();
             try {
                 foreach (ManagementBaseObject cim_data in searcher.Get()) {
                     Tpm tpm = new Tpm {
@@ -28,7 +28,7 @@ namespace DeviceInfo.Security {
                         Owned = (bool) cim_data["IsOwned_InitialValue"],
                         Manufacture = (string) cim_data["ManufacturerIdTxt"],
                         ManufactureVer = (string) cim_data["ManufacturerVersion"],
-                        HighestSpec = tools.highest_num((string) cim_data["SpecVersion"]).ToString()
+                        HighestSpec = tools.HighestNum((string) cim_data["SpecVersion"]).ToString()
                     };
                     data.Add(tpm);
                 }

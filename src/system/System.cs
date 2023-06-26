@@ -1,8 +1,8 @@
+using DeviceInfo.Tools;
 using System;
 using System.Collections.Generic;
 using System.Management;
 using System.Management.Automation;
-using DeviceInfo.tools;
 
 namespace DeviceInfo.System {
     [Cmdlet(VerbsCommon.Get, "SystemInfo")]
@@ -121,15 +121,15 @@ namespace DeviceInfo.System {
 
         protected override void EndProcessing() {
             List<OS> data = new List<OS>();
-            Tools tools = new Tools();
+            Tool tools = new Tool();
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem");
 
             foreach (ManagementBaseObject cim_data in searcher.Get()) {
                 OS os = new OS {
                     BuildNum = Convert.ToUInt16(cim_data["BuildNumber"]),
                     SystemDrive = Convert.ToString(cim_data["SystemDrive"]),
-                    LastBoot = tools.str_date(Convert.ToString(cim_data["LastBootUpTime"])).ToString("yyyy/MM/dd HH:mm:ss"),
-                    InstallTime = tools.str_date(Convert.ToString(cim_data["InstallDate"])).ToString("yyyy/MM/dd HH:mm:ss"),
+                    LastBoot = tools.StrToDate(Convert.ToString(cim_data["LastBootUpTime"])).ToString("yyyy/MM/dd HH:mm:ss"),
+                    InstallTime = tools.StrToDate(Convert.ToString(cim_data["InstallDate"])).ToString("yyyy/MM/dd HH:mm:ss"),
                     Name = Convert.ToString(cim_data["Name"]).Split('|')[0],
                     OSCountryCode = Convert.ToUInt16(cim_data["CountryCode"]),
                     SN = Convert.ToString(cim_data["SerialNumber"]),
