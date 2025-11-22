@@ -1,3 +1,7 @@
+
+> [!Warning]
+> Archived since I don't have Windows machines anymore.
+
 ## Functions
 
 -   Hardware
